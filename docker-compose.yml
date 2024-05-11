@@ -1,0 +1,18 @@
+version: '3'
+services:
+  server:
+    build: ./server
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./server/.env
+    # environment:
+    #   - JWT_SECRET=${JWT_SECRET}
+    #   - MONGODB_URI=${MONGODB_URI}
+    #   - PORT=${PORT}
+  client:
+    build: ./coursetopia-fe
+    ports:
+      - "3001:3001"
+    # environment:
+    #   - REACT_APP_API_URL=${REACT_APP_API_URL}
